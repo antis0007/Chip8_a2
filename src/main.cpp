@@ -2,8 +2,9 @@
 
 #include "chip8.h"
 #include "display.h"
+
 //#include <chrono>
-int main(int argc, char ** argv){
+int main(int argc, char* argv[]){
 
   display screen;
   //Display Setup and Main Loop:
@@ -26,13 +27,13 @@ int main(int argc, char ** argv){
 
   bool quit = false;
   //char rom_dir [] = {"IBM Logo.ch8"};
-  //char rom_dir [] = {"test_opcode.ch8"};
+  char rom_dir [] = {"roms/test_opcode.ch8"};
   //char rom_dir [] = {"game_of_life.ch8"};
   //char rom_dir [] = {"nyancat2.ch8"};
   //char rom_dir [] = {"snake.ch8"};
   //char rom_dir [] = {"invaders.rom"};
   //char rom_dir [] = {"pong.rom"};
-  char rom_dir [] = {"tetris.rom"};
+  //char rom_dir [] = {"tetris.rom"};
   //test_opcode.ch8
 
   chip8 cpu(&screen);

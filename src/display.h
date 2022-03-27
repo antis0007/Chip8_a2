@@ -1,5 +1,18 @@
-#pragma once
+//#pragma once
+#ifndef DISPLAY_H
+#define DISPLAY_H
+
+//Cross-Platform Includes:
+#ifdef __MINGW32__
+//do some stuff for Windows
 #include "../include/SDL2/SDL.h"
+#elif __APPLE__
+//do some stuff for Apple
+#include<SDL2/SDL.h>
+#elif __linux__
+//do stuff for Linux
+#include<SDL2/SDL.h>
+#endif
 
 class display{
 private:
@@ -33,3 +46,4 @@ public:
   //~display();
 
 };
+#endif

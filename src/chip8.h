@@ -1,4 +1,8 @@
-#pragma once
+//#pragma once
+#ifndef CHIP8_H
+#define CHIP8_H
+
+
 #define memory_size 4096
 #define v_size 16
 
@@ -76,3 +80,4 @@ public:
   ~chip8();
 
 };
+#endif

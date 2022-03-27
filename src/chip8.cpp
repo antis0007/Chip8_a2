@@ -51,7 +51,7 @@ void chip8::load_rom(char rom_dir[], unsigned char * memory_ptr){
   //​ Load game (Based on Kolby Load function)
   std::ifstream input(rom_dir, std::ios::binary);
   std::vector<uint8_t> buffer(std::istreambuf_iterator<char>(input), {});
-  for(int i = 0; i < buffer.size(); i++){
+  for(unsigned int i = 0; i < buffer.size(); i++){
     //i is our offset
     memory_ptr[0x200+i]=buffer[i];
   }
