@@ -1,12 +1,11 @@
-#include"chip8.h"
-
 #include<iostream>
 #include<fstream>
-#include<cstring>
+#include<string>
 #include<vector>
 #include<sstream>
 //Note: Potentially heavy header
 #include<stdlib.h>
+#include"chip8.h"
 
 
 //Constructor

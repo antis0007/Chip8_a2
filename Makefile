@@ -1,13 +1,16 @@
 #$(info $(OS))
-ifeq ($(OS), Windows_NT)
-LIB_LINKS := -lmingw32 -lSDL2main -lSDL2
-else
-LIB_LINKS := -lSDL2main -lSDL2
-endif
-
 CXX := g++
 CXXFLAGS := -Wall -g
-CPPFLAGS := -I include -L lib
+CPPFLAGS := -I include
+
+ifeq ($(OS), Windows_NT)
+LIB_LINKS := -lmingw32 -lSDL2main -lSDL2
+CPPFLAGS += -L lib
+else
+LIB_LINKS := -lSDL2
+endif
+
+
 
 #LIB_LINKS := -lmingw32 -lSDL2main -lSDL2 -static-libgcc -static-libstdc++
 #LIB_LINKS := `sdl2-config --libs --cflags`

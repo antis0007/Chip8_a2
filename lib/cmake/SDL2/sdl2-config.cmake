@@ -1,6 +1,6 @@
 # sdl2 cmake project-config input for ./configure scripts
 
-set(prefix "/opt/local/i686-w64-mingw32") 
+set(prefix "/opt/local/x86_64-w64-mingw32") 
 set(exec_prefix "${prefix}")
 set(libdir "${exec_prefix}/lib")
 set(includedir "${prefix}/include")
@@ -21,7 +21,7 @@ if(NOT TARGET SDL2::SDL2)
   # (SDL2Config.cmake has the same behavior)
   string(REPLACE "-lSDL2main" "" SDL2_EXTRA_LINK_FLAGS ${SDL2_EXTRA_LINK_FLAGS})
   string(STRIP "${SDL2_EXTRA_LINK_FLAGS}" SDL2_EXTRA_LINK_FLAGS)
-  string(REPLACE "-lSDL2 " "" SDL2_EXTRA_LINK_FLAGS_STATIC " -Wl,--dynamicbase -Wl,--nxcompat -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lsetupapi -lversion -luuid ")
+  string(REPLACE "-lSDL2 " "" SDL2_EXTRA_LINK_FLAGS_STATIC " -Wl,--dynamicbase -Wl,--nxcompat -Wl,--high-entropy-va -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lsetupapi -lversion -luuid ")
   string(STRIP "${SDL2_EXTRA_LINK_FLAGS_STATIC}" SDL2_EXTRA_LINK_FLAGS_STATIC)
 
 if(WIN32 AND NOT MSVC)
